@@ -30,10 +30,16 @@ On a Fedora system install the `Development Tools`  and the `C Development Tools
 
 ## Build module
 
+**Enter the module directory**
+
+```
+~$ cd test_kernel_module/kernel_module
+```
+
 The Makefile defines how to build the module, execute the `make` command to compile the module.
 
 ```
-~$ make
+kernel_module $ make
 ```
 
 ## Load module
