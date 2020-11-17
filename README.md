@@ -10,6 +10,7 @@ This is a test kernel module
 1. [Daniel Rascón](https://github.com/Dnxxl) *Padwan*
 1. [Oswaldo Holguin](https://github.com/Oswaldo-Holguin) *Padwan*
 1. [Luis Mauricio Castro Gutiérrez](https://github.com/mau-castro) *Padwan*
+1. [Rodrigo Alberto Valdez Covarrubias](https://github.com/RodrigoVal07) *Padawan*
 
 
 
