@@ -50,6 +50,14 @@ Load the module using the `insmod` command.
 ~$ sudo insmod super_module.ko
 ```
 
+## Check module major number
+
+The major number is needed for creating the device that is used to interact with the module
+```
+~$ journalctl -f | grep kernel
+```
+
+
 ## Remove module
 
 Remove the module using the `rmmod` command
