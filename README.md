@@ -54,7 +54,7 @@ Load the module using the `insmod` command.
 
 The major number is needed for creating the device that is used to interact with the module
 ```
-~$ journalctl -f | grep kernel
+~$ journalctl  | grep mknod
 ```
 
 
