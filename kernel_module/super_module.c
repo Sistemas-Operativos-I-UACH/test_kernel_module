@@ -3,7 +3,6 @@
 #include <linux/kernel.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
-#include <linux/device.h>
 
 #define DEVICE_NAME "super_module"
 
@@ -20,8 +19,6 @@ static struct file_operations fops = {
 };
 
 static int major;
-static struct class *cl;
-static dev_t first;
 
 static int __init super_module_init(void) {
     major = register_chrdev(0, DEVICE_NAME, &fops);
@@ -39,24 +36,6 @@ static int __init super_module_init(void) {
     printk(KERN_INFO "Try various minor numbers. Try to cat and echo to\n");
     printk(KERN_INFO "the device file.\n");
     printk(KERN_INFO "Remove the device file and module when done.\n");
-
-
-    if ( (cl = class_create( THIS_MODULE, "chardev" ) ) == NULL )
-    {
-        printk( KERN_ALERT "Class creation failed\n" );
-        unregister_chrdev_region( first, 1 );
-        return -1;
-    }
-
-
-    if( device_create( cl, NULL, first, NULL, "super_module" ) == NULL ) {
-        printk( KERN_ALERT "Device creation failed\n" );
-        class_destroy(cl);
-        unregister_chrdev_region( first, 1 );
-        return -1;
-    }
-
-
 
     return 0;
 }
