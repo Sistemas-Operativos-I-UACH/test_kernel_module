@@ -6,15 +6,13 @@ This is a test kernel module
 
 
 1. [Iván Chavero](https://github.com/imcsk8) *Master Jedi*
-1. [César Murillo](https://github.com/Cesar64100) *Padwan*
-1. [Mateo Gonzalez](https://github.com/MateoGL) *Padwan*
-1. [Nicanor Sandoval](https://github.com/nicanorsandoval) *Padwan*
-1. [Daniel Rascón](https://github.com/Dnxxl) *Padwan*
-1. [Oswaldo Holguin](https://github.com/Oswaldo-Holguin) *Padwan*
-1. [Luis Mauricio Castro Gutiérrez](https://github.com/mau-castro) *Padwan*
-1. [Gilberto Chavez](https://github.com/GilbertoCh) *Padwan*
-1. [Javier Carrera](https://github.com/JavierCarreraHW) *Padwan*
-1. [Rodrigo Alberto Valdez Covarrubias](https://github.com/RodrigoVal07) *Padwan*
+1. [Daniel López](https://github.com/danielcosmico) *Padwan*
+2. [Hugo Edibray Becerra Gandara
+](https://github.com/Edibraaay) *Padwan*
+3. [Juan Daniel Villegas Terrazas](https://github.com/JuanDanielVillegas) *Padwan*
+4. [Ana Marina Ortiz Ruiz ](https://github.com/MarinaOrtiz328) *Padwan*
+5. [LUIS ENRIQUE FERNANDEZ REZA](https://github.com/lfernandez17) *Padwan*
+6. [Ernesto Gutierrez Ortega](https://github.com/ern-gt) *Padwan*
 
 
 # Module building
