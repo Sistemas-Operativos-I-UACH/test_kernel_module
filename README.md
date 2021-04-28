@@ -26,6 +26,12 @@ On a Fedora system install the `Development Tools`  and the `C Development Tools
 ~$ sudo dnf install -y kernel-headers
 ```
 
+On Debian based systems:
+
+```
+~$ sudo apt install -y build-essential linux-headers-$(uname -r)
+```
+
 ## Build module
 
 **Enter the module directory**
