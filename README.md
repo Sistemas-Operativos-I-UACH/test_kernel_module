@@ -6,13 +6,12 @@ This is a test kernel module
 
 
 1. [Iván Chavero](https://github.com/imcsk8) *Master Jedi*
-1. [Daniel López](https://github.com/danielcosmico) *Padwan*
-2. [Hugo Edibray Becerra Gandara
-](https://github.com/Edibraaay) *Padwan*
-3. [Juan Daniel Villegas Terrazas](https://github.com/JuanDanielVillegas) *Padwan*
-4. [Ana Marina Ortiz Ruiz ](https://github.com/MarinaOrtiz328) *Padwan*
-5. [LUIS ENRIQUE FERNANDEZ REZA](https://github.com/lfernandez17) *Padwan*
-6. [Ernesto Gutierrez Ortega](https://github.com/ern-gt) *Padwan*
+2. [Tamales de la 28](https://github.com/test_kernel_module/td28_kernel_module) *Padwan Team* 
+3. [Pedro](https://github.com/test_kernel_module/pedro_kernel_module) *Padwan Team* 
+4. [Millenials](https://github.com/test_kernel_module/millenials_kernel_module) *Padwan Team* 
+5. [Panes](https://github.com/test_kernel_module/panes_kernel_module) *Padwan Team* 
+6. [Bandona](https://github.com/test_kernel_module/bandona_kernel_module) *Padwan Team* 
+7. [Unix](https://github.com/test_kernel_module/unix_kernel_module) *Padwan Team* 
 
 
 # Module building
