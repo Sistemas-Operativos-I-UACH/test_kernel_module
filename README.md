@@ -22,7 +22,7 @@ On a Fedora system install the `Development Tools`  and the `C Development Tools
 
 ```
 ~$ sudo dnf groupinstall -y 'Development Tools' 'C Development Tools and Libraries'
-~$ sudo dnf install -y kernel-headers
+~$ sudo dnf install -y kernel-headers kernel-devel
 ```
 
 On Debian based systems:
