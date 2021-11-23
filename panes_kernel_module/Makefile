@@ -1,4 +1,4 @@
-obj-m += pepito_module.o
+obj-m += panes_module.o
 
 all:
 	echo "Compilando modulo pepito"
