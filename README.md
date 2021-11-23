@@ -6,11 +6,11 @@ This is a test kernel module
 
 
 1. [Iván Chavero](https://github.com/imcsk8) *Master Jedi*
-2. [Tamales de la 28](https://github.com/test_kernel_module/td28_kernel_module) *Padwan Team* 
-3. [Pedro](https://github.com/test_kernel_module/pedro_kernel_module) *Padwan Team* 
-4. [Millenials](https://github.com/test_kernel_module/millenials_kernel_module) *Padwan Team* 
-5. [Panes](https://github.com/test_kernel_module/panes_kernel_module) *Padwan Team* 
-6. [Bandona](https://github.com/test_kernel_module/bandona_kernel_module) *Padwan Team* 
+2. [Tamales de la 28](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/td28_kernel_module) *Padwan Team* 
+3. [Pedro](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/pedro_kernel_module) *Padwan Team* 
+4. [Millenials](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/millenials_kernel_module) *Padwan Team* 
+5. [Panes](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/panes_kernel_module) *Padwan Team* 
+6. [Bandona](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/Bandona_kernel_module) *Padwan Team* 
 7. [Unix](https://github.com/test_kernel_module/unix_kernel_module) *Padwan Team* 
 
 
@@ -22,7 +22,7 @@ On a Fedora system install the `Development Tools`  and the `C Development Tools
 
 ```
 ~$ sudo dnf groupinstall -y 'Development Tools' 'C Development Tools and Libraries'
-~$ sudo dnf install -y kernel-headers
+~$ sudo dnf install -y kernel-headers kernel-devel
 ```
 
 On Debian based systems:
