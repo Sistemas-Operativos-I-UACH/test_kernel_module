@@ -9,7 +9,7 @@ This is a test kernel module
 2. [Tamales de la 28](https://github.com/test_kernel_module/td28_kernel_module) *Padwan Team* 
 3. [Pedro](https://github.com/test_kernel_module/pedro_kernel_module) *Padwan Team* 
 4. [Millenials](https://github.com/test_kernel_module/millenials_kernel_module) *Padwan Team* 
-5. [Panes](https://github.com/test_kernel_module/panes_kernel_module) *Padwan Team* 
+5. [Panes](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/panes_kernel_module) *Padwan Team* 
 6. [Bandona](https://github.com/test_kernel_module/bandona_kernel_module) *Padwan Team* 
 7. [Unix](https://github.com/test_kernel_module/unix_kernel_module) *Padwan Team* 
 
