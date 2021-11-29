@@ -42,7 +42,7 @@ static int __init bandona_module_init(void) {
     return 0;
 }
 
-static void __exit pepito_exit(void) {
+static void __exit bandona_exit(void) {
     printk(KERN_INFO "bandona kernel module successfully unloaded\n");
 }
 
