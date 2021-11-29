@@ -1,4 +1,4 @@
-bj-m += bandona_module.o
+obj-m += bandona_module.o
 
 all:
 	echo "Compilando modulo bandona"
