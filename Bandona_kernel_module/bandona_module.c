@@ -4,7 +4,7 @@
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 
-#define DEVICE_NAME "td28_module"
+#define DEVICE_NAME "bandona_module"
 
 MODULE_LICENSE("GPL");
 
@@ -22,15 +22,15 @@ static struct file_operations fops = {
    .release = dev_release,
 };
 
-static int __init td28_init(void) {
+static int __init bandona_module_init(void) {
     major = register_chrdev(0, DEVICE_NAME, &fops);
 
     if (major < 0) {
-        printk(KERN_ALERT "Tamales de la 28 module load failed\n");
+        printk(KERN_ALERT "Super bandona load failed\n");
         return major;
     }
 
-    printk(KERN_INFO "Tamales de la 28 has been loaded\n");
+    printk(KERN_INFO "Super bandona has been loaded\n");
 
     printk(KERN_INFO "I was assigned major number %d. To talk to\n", major);
     printk(KERN_INFO "the driver, create a dev file with\n");
@@ -42,30 +42,30 @@ static int __init td28_init(void) {
     return 0;
 }
 
-static void __exit td28_exit(void) {
-    printk(KERN_INFO "Tamales de la 28 module successfully unloaded\n");
+static void __exit pepito_exit(void) {
+    printk(KERN_INFO "bandona kernel module successfully unloaded\n");
 }
 
 static int dev_open(struct inode *inodep, struct file *filep) {
-   printk(KERN_INFO "Tamales de la 28 module device opened\n");
+   printk(KERN_INFO "Super bandona device opened\n");
    return 0;
 }
 
 static ssize_t dev_write(struct file *filep, const char *buffer,
                          size_t len, loff_t *offset) {
 
-   printk(KERN_INFO "Sorry, Tamales de la 28 is read only\n");
+   printk(KERN_INFO "Sorry, Super bandona is read only\n");
    return -EFAULT;
 }
 
 static int dev_release(struct inode *inodep, struct file *filep) {
-   printk(KERN_INFO "Tamales de la 28 device closed\n");
+   printk(KERN_INFO "Super bandona device closed\n");
    return 0;
 }
 
 static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *offset) {
     int errors = 0;
-    char *message = "Party rock is in the house tonight, Everybody just have a good time...";
+    char *message = "never gonna give you up, never gonna let you down... ";
     int message_len = strlen(message);
 
     errors = copy_to_user(buffer, message, message_len);
@@ -74,5 +74,5 @@ static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *of
 }
 
 
-module_init(td28_init);
-module_exit(td28_exit);
+module_init(bandona_module_init);
+module_exit(bandona_exit);
