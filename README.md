@@ -11,7 +11,7 @@ This is a test kernel module
 4. [Millenials](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/millenials_kernel_module) *Padwan Team* 
 5. [Panes](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/panes_kernel_module) *Padwan Team* 
 6. [Bandona](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/Bandona_kernel_module) *Padwan Team* 
-7. [Unix](https://github.com/test_kernel_module/unix_kernel_module) *Padwan Team* 
+7. [Unix](https://github.com/Sistemas-Operativos-I-UACH/test_kernel_module/tree/main/Unix_kernel_module) *Padwan Team* 
 
 
 # Module building
