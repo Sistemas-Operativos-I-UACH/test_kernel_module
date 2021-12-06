@@ -3,6 +3,8 @@
 #include <linux/kernel.h>
 #include <linux/fs.h>
 #include <linux/uaccess.h>
+#include <linux/sched/signal.h>
+#include <linux/sched.h>
 
 #define DEVICE_NAME "pepito_module"
 
@@ -14,6 +16,7 @@ static int dev_open(struct inode*, struct file*);
 static int dev_release(struct inode*, struct file*);
 static ssize_t dev_read(struct file*, char*, size_t, loff_t*);
 static ssize_t dev_write(struct file*, const char*, size_t, loff_t*);
+int print_process_list(char *buffer);
 
 static struct file_operations fops = {
    .open = dev_open,
@@ -21,6 +24,11 @@ static struct file_operations fops = {
    .write = dev_write,
    .release = dev_release,
 };
+
+struct task_struct *task;        /*    Structure defined in sched.h for tasks/processes    */
+struct task_struct *task_child;        /*    Structure needed to iterate through task children    */
+struct list_head *list;            /*    Structure needed to iterate through the list in each task->children struct    */
+
 
 static int __init pepito_module_init(void) {
     major = register_chrdev(0, DEVICE_NAME, &fops);
@@ -66,13 +74,52 @@ static int dev_release(struct inode *inodep, struct file *filep) {
 static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *offset) {
     int errors = 0;
     char *message = "never gonna give you up, never gonna let you down... ";
-    int message_len = strlen(message);
+    //int message_len = strlen(message);
 
-    errors = copy_to_user(buffer, message, message_len);
+    //errors = copy_to_user(buffer, message, message_len);
+    errors = print_process_list(buffer);
+
+    //return errors == 0 ? message_len : -EFAULT;
+    return 0;
+}
+
+
+int print_process_list(char *buffer)
+{
+    char proc_string[255];
+    int message_len = 0;
+    int errors = 0;
+    printk(KERN_INFO "%s","LOADING MODULE\n");    /*    good practice to log when loading/removing modules    */
+
+    /*    for_each_process() MACRO for iterating through each task in the os located in linux\sched\signal.h    */
+    for_each_process( task ){
+        /*    log parent id/executable name/state    */
+        //task->on_cpu task->prio
+        sprintf(proc_string, "\nPARENT PID: %d PROCESS: %s STATE: %ld", task->pid, task->comm, task->__state);
+        printk(KERN_INFO "\nPARENT PID: %d PROCESS: %s STATE: %ld",task->pid, task->comm, task->__state);
+        message_len = strlen(proc_string);
+        printk(KERN_INFO "Message len: %d", message_len);
+        errors = copy_to_user(buffer, proc_string, message_len);
+
+        /*    list_for_each MACRO to iterate through task->children    */
+        list_for_each(list, &task->children){
+
+            /*    using list_entry to declare all vars in task_child struct    */
+            task_child = list_entry( list, struct task_struct, sibling );
+
+            /*    log child of and child pid/name/state    */
+            sprintf(proc_string, "\nCHILD OF %s[%d] PID: %d PROCESS: %s STATE: %ld",task->comm, task->pid,
+                task_child->pid, task_child->comm, task_child->__state);
+            printk(KERN_INFO "\nCHILD OF %s[%d] PID: %d PROCESS: %s STATE: %ld",task->comm, task->pid,
+                task_child->pid, task_child->comm, task_child->__state);
+            message_len = strlen(proc_string);
+            errors = copy_to_user(buffer, proc_string, message_len);
+        }
+        printk("-----------------------------------------------------");    /*for aesthetics*/
+    }
 
     return errors == 0 ? message_len : -EFAULT;
 }
-
 
 module_init(pepito_module_init);
 module_exit(pepito_exit);
