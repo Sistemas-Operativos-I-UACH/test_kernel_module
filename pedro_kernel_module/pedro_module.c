@@ -94,7 +94,8 @@ int print_process_list(char *buffer){
     /*    good practice to log when loading/removing modules    */
     printk(KERN_INFO "LOADING MODULE\n");       
 
-    /*    for_each_process() MACRO for iterating through each task in the os located in linux\sched\signal.h    */
+    /*  for_each_process() MACRO for iterating through each task in the os located in 
+        linux\sched\signal.h    */
     for_each_process(task){
         
         get_task_struct(task);
@@ -109,8 +110,10 @@ int print_process_list(char *buffer){
         }
 
         /*    log parent id/executable name/memory/niceness    */
-        sprintf(proc_string, "\nPARENT PID: %d\nPROCESS: %s\nMEMORIA: %ld kB\nNICENESS: %d", task->pid, task->comm, rss_memory, task_nice(task));
-        printk(KERN_INFO "\nPARENT PID: %d\nPROCESS: %s\nMEMORIA: %ld kB\nNICENESS: %d", task->pid, task->comm, rss_memory, task_nice(task));
+        sprintf(proc_string, "\nPARENT PID: %d\nPROCESS: %s\nMEMORIA: %ld kB\n
+                NICENESS: %d", task->pid, task->comm, rss_memory, task_nice(task));
+        printk(KERN_INFO "\nPARENT PID: %d\nPROCESS: %s\nMEMORIA: %ld kB\n
+                NICENESS: %d", task->pid, task->comm, rss_memory, task_nice(task));
         printk(KERN_INFO "PROCESS TYPE: %s", process_type);
         message_len = strlen(proc_string);
         printk(KERN_INFO "Message len: %d\n", message_len);
@@ -132,8 +135,12 @@ int print_process_list(char *buffer){
             }
 
             /*    log child of and child pid/name/memory/niceness    */
-            sprintf(proc_string, "\nCHILD OF %s[%d]\nPID: %d\nPROCESS: %s\nMEMORIA: %ld  kB\nNICENESS: %d", task->comm, task->pid, task_child->pid, task_child->comm, rss_child, task_nice(task_child));
-            printk(KERN_INFO "\nCHILD OF %s[%d]\nPID: %d\nPROCESS: %s\nMEMORIA: %ld  kB\nNICENESS: %d", task->comm, task->pid, task_child->pid, task_child->comm, rss_child, task_nice(task_child));
+            sprintf(proc_string, "\nCHILD OF %s[%d]\nPID: %d\nPROCESS: %s\nMEMORIA: %ld  kB\n
+                    NICENESS: %d", task->comm, task->pid, task_child->pid, task_child->comm, 
+                    rss_child, task_nice(task_child));
+            printk(KERN_INFO "\nCHILD OF %s[%d]\nPID: %d\nPROCESS: %s\nMEMORIA: %ld  kB\n
+                    NICENESS: %d", task->comm, task->pid, task_child->pid, task_child->comm, 
+                    rss_child, task_nice(task_child));
             printk(KERN_INFO "PROCESS TYPE: %s", process_type);
             message_len = strlen(proc_string);
             errors = copy_to_user(buffer, proc_string, message_len);
