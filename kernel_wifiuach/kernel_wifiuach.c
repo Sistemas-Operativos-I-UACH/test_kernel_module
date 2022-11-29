@@ -1,0 +1,21 @@
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/fs.h>
+#include <linux/uaccess.h>
+
+#define DEVICE_NAME "kernel_wifiuach"
+
+static int __init super_module_init(void) {
+    printk(KERN_INFO "Kernel WIFI UACH has been loaded\n");
+    return 0;
+}
+
+static void __exit super_module_exit(void) {
+    printk(KERN_INFO "Kernel WIFI UACH has been unloaded\n");
+}
+
+module_init(super_module_init);
+module_exit(super_module_exit);
+
+MODULE_LICENSE("GPL");
